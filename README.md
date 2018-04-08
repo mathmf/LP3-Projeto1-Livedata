@@ -6,4 +6,7 @@ deslizar de um lado para o outro irá trocar de telas.
 Enquanto no cadastro do CLiente será utilizado multimidia para colocar uma imagen junto do cliente.
 Para o recurso de fora ainda não decidimos, provavelmente será um botão para pesquisar o nome do produto no Google.
 
+A arquitetura está no Git com o nome LP3-P1.jpg.
+
+ela irá utilizar LiveData por isso necessita do DataSource.
 

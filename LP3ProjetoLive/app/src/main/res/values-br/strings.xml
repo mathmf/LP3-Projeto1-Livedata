@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LP3 Projeto Live</string>
+    <string name="app_menu">Menu</string>
+    <string name="clientes">Clientes</string>
+    <string name="produtos">Produtos</string>
+    <string name="pagamentos">Pagamentos</string>
+</resources>

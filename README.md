@@ -10,3 +10,17 @@ A arquitetura está no Git com o nome LP3-P1.jpg.
 
 ela irá utilizar LiveData por isso necessita do DataSource.
 
+13/04 primeira versão do app.
+
+foi implementado a classe Cliente e as telas de listas de cliente e a tela de visualização de cliente.
+
+Falta:
+
+BD e LiveData para Cliente.
+Activities para Criação e edição de Clientes.
+Tudo para Produtos e Pagamentos.
+
+Total feito até agora:15%
+
+
+

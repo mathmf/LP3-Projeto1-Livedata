@@ -6,4 +6,6 @@
     <string name="pagamentos">Pagamentos</string>
     <string name="title_activity_cliente_main">Clientes</string>
     <string name="title_activity_cliente_view">ClienteView</string>
+    <string name="title_activity_produto_main">ProdutoMain</string>
+    <string name="title_activity_produto_view">ProdutoView</string>
 </resources>

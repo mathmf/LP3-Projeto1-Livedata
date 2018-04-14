@@ -19,8 +19,21 @@ Falta:
 BD e LiveData para Cliente.
 Activities para Criação e edição de Clientes.
 Tudo para Produtos e Pagamentos.
+ViewModel e databinding.
 
 Total feito até agora:15%
 
+14/04
+
+Implementada a classe Produto e e as telas de listas de Produto e a tela de visualização de Produto.
+
+Falta:
+
+BD e LiveData para Cliente e Produto.
+Activities para Criação e edição de Clientes e Produtos.
+Tudo para Pagamentos.
+ViewModel e databinding.
+
+Total feito até agora:20%
 
 

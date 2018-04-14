@@ -20,7 +20,8 @@
                 android:layout_weight="1"
                 android:text="@string/clientes"
                 android:textSize="25dp"
-                android:id="@+id/ButtonCli"/>
+                android:id="@+id/ButtonCli"
+                android:onClick="menuBtn"/>
 
         </TableRow>
 
@@ -31,7 +32,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/produtos"
-                android:textSize="25dp"/>
+                android:textSize="25dp"
+                android:id="@+id/ButtonPro"
+                android:onClick="menuBtn"/>
 
         </TableRow>
         <TableRow

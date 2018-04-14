@@ -19,6 +19,11 @@ public class Menu extends AppCompatActivity {
                     new Intent(this, ClienteMain.class);
             startActivity(activityIntent);
         }
+        else if(clickedButton==findViewById(R.id.ButtonPro)){
+            Intent activityIntent =
+                    new Intent(this, ProdutoMain.class);
+            startActivity(activityIntent);
+        }
 
 
 

@@ -40,4 +40,12 @@ public class Cliente implements Serializable {
     public void setCPF(int CPF) {
         this.CPF = CPF;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

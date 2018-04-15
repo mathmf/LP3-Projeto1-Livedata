@@ -36,4 +36,17 @@ ViewModel e databinding.
 
 Total feito até agora:20%
 
+15/05
+
+Criado BD e ViewModel com LiveData para Cliente, ainda não testado no programa principal.
+
+Falta:
+
+Testar Novas funções do cliente e implementar databinding.
+BD e LiveData para  Produto.
+Activities para Criação e edição de Clientes e Produtos.
+Tudo para Pagamentos.
+ViewModel e databinding.
+
+Total feito até agora:25%
 

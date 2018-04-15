@@ -1,13 +1,18 @@
 package com.example.mathe_000.lp3projetolive;
 
-import java.io.Serializable;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
 
+import java.io.Serializable;
 /**
  * Created by mathe_000 on 13/04/2018.
  */
 
+@Entity(tableName = "Clientes")
 public class Cliente implements Serializable {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private String Nome;
     private int CPF;
 

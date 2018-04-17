@@ -1,11 +1,14 @@
-package com.example.mathe_000.lp3projetolive;
+package com.example.mathe_000.lp3projetolive.db.Dao;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
+
+import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
 
 import java.util.List;
 
@@ -19,10 +22,10 @@ public interface ClienteDao {
     LiveData<List<Cliente>> getAllClientes();
     // Select one task from Task table by id
     @Query("SELECT * FROM Clientes WHERE id=:id")
-    LiveData<Cliente> getClienteById(String id);
+    LiveData<Cliente> getClienteById(int id);
 
-    @Insert
-    void insertAll(Cliente... clients);
+    @Insert (onConflict = OnConflictStrategy.REPLACE)
+    void insertAll(List<Cliente> clientes);
 
     @Delete
     void delete(Cliente client);

@@ -1,4 +1,4 @@
-package com.example.mathe_000.lp3projetolive;
+package com.example.mathe_000.lp3projetolive.db.Entidades;
 
 import java.io.Serializable;
 

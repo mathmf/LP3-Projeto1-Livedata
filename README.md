@@ -19,7 +19,7 @@ Falta:
 BD e LiveData para Cliente.\
 Activities para Criação e edição de Clientes.\
 Tudo para Produtos e Pagamentos.\
-ViewModel e databinding.\
+ViewModel e databinding.
 
 Total feito até agora:15%
 
@@ -32,7 +32,7 @@ Falta:
 BD e LiveData para Cliente e Produto.\
 Activities para Criação e edição de Clientes e Produtos.\
 Tudo para Pagamentos.\
-ViewModel e databinding.\
+ViewModel e databinding.
 
 Total feito até agora:20%
 
@@ -46,7 +46,19 @@ Testar Novas funções do cliente e implementar databinding.\
 BD e LiveData para  Produto.\
 Activities para Criação e edição de Clientes e Produtos.\
 Tudo para Pagamentos.\
-ViewModel e databinding.\
+ViewModel e databinding.
 
 Total feito até agora:25%
+
+16/05
+
+Implementação completa MVVM com databinding e LiveData para Cliente, falta apenas implementar a CRUD do Cliente.
+
+Falta:
+
+Implementar a CRUD do Cliente.\
+MVVM + LiveData e databinding para Produto.\
+Tudo para Pagamentos.
+
+Total feito até agora 50%
 

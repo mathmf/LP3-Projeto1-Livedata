@@ -8,4 +8,7 @@
     <string name="title_activity_cliente_view">ClienteView</string>
     <string name="title_activity_produto_main">ProdutoMain</string>
     <string name="title_activity_produto_view">ProdutoView</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

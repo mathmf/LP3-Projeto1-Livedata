@@ -11,6 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.mathe_000.lp3projetolive.db.Entidades.Produto;
+
 import java.util.ArrayList;
 
 public class ProdutoMain extends AppCompatActivity {

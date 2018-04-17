@@ -1,4 +1,4 @@
-package com.example.mathe_000.lp3projetolive;
+package com.example.mathe_000.lp3projetolive.db.Entidades;
 
 /**
  * Created by mathe_000 on 14/04/2018.

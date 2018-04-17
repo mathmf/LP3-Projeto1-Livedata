@@ -1,4 +1,4 @@
-package com.example.mathe_000.lp3projetolive;
+package com.example.mathe_000.lp3projetolive.db.Entidades;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Entity(tableName = "Clientes")
 public class Cliente implements Serializable {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private int id;
     private String Nome;
     private int CPF;
@@ -20,9 +20,10 @@ public class Cliente implements Serializable {
 
     }
 
-    public Cliente(String nome, int CPF) {
+    public Cliente(String nome, int CPF, int id) {
         Nome = nome;
         this.CPF = CPF;
+        this.id = id;
     }
 
     public String getNome() {

@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
+
 public class ClienteView extends AppCompatActivity {
 
     @Override

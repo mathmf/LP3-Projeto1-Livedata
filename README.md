@@ -83,7 +83,9 @@ Produto completado.
 
 Falta:
 
-Tudo para Pagamentos.
+Tudo para Pagamentos.\
+Splash de inicialização.\
+Internacionalização.
 
 Bugs:
 

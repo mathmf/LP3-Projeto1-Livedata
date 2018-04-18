@@ -76,3 +76,17 @@ Bugs:
 Depois de deletar ou editar um cliente, se clicar no botão de editar leva a tela de edição com os valores iniciais.
 
 total feito até agora 60%
+
+18/05
+
+Produto completado.
+
+Falta:
+
+Tudo para Pagamentos.
+
+Bugs:
+
+Depois de deletar ou editar um cliente ou produto, se clicar no botão de editar leva a tela de edição com os valores iniciais.
+
+total feito até agora 75%

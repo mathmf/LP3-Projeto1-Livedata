@@ -11,9 +11,10 @@ import android.support.annotation.NonNull;
 
 
 import com.example.mathe_000.lp3projetolive.AppExecutors;
-import com.example.mathe_000.lp3projetolive.DataGenerator;
 import com.example.mathe_000.lp3projetolive.db.Dao.ClienteDao;
+import com.example.mathe_000.lp3projetolive.db.Dao.ProdutoDao;
 import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
+import com.example.mathe_000.lp3projetolive.db.Entidades.Produto;
 
 import java.util.List;
 
@@ -21,13 +22,15 @@ import java.util.List;
 /**
  * Created by mathe_000 on 15/04/2018.
  */
-@Database(entities = {Cliente.class}, version = 1, exportSchema = false)
+@Database(entities = {Cliente.class, Produto.class}, version = 1, exportSchema = false)
 public abstract class ClienteDatabase extends RoomDatabase {
 
 
     public static ClienteDatabase sInstance;
 
     public abstract ClienteDao clienteDao();
+
+    public abstract ProdutoDao produtoDao();
 
     public static final String DATABASE_NAME = "Clientes";
 
@@ -46,13 +49,6 @@ public abstract class ClienteDatabase extends RoomDatabase {
         return sInstance;
     }
 
-    // Create the database
-    static ClienteDatabase create(Context context) {
-        RoomDatabase.Builder<ClienteDatabase> builder =    Room.databaseBuilder(context.getApplicationContext(),
-                ClienteDatabase.class,
-                "Clientes");
-        return builder.build();
-    }
 
     private static ClienteDatabase buildDatabase(final Context appContext,
                                              final AppExecutors executors) {
@@ -66,9 +62,10 @@ public abstract class ClienteDatabase extends RoomDatabase {
                             addDelay();
                             // Generate the data for pre-population
                             ClienteDatabase database = ClienteDatabase.getDatabaseInstance(appContext, executors);
-                            List<Cliente> Cliente = DataGenerator.generateProducts();
+                            List<Cliente> Cliente = DataGenerator.generateClientes();
+                            List<Produto> Produto = DataGenerator.generateProdutos();
 
-                            insertData(database, Cliente);
+                            insertData(database, Cliente,Produto);
                             // notify that the database was created and it's ready to be used
                             database.setDatabaseCreated();
                         });
@@ -76,17 +73,13 @@ public abstract class ClienteDatabase extends RoomDatabase {
                 }).build();
     }
 
-    private static void insertData(final ClienteDatabase database, final List<Cliente> clientes) {
+    private static void insertData(final ClienteDatabase database, final List<Cliente> clientes,final List<Produto> produtos) {
         database.runInTransaction(() -> {
             database.clienteDao().insertAll(clientes);
+            database.produtoDao().insertAll(produtos);
         });
     }
 
-    private static void deleteData(final ClienteDatabase database,final Cliente cliente){
-        database.runInTransaction(() -> {
-            database.clienteDao().getClienteById(cliente.getId());
-        });
-    }
 
     private static void addDelay() {
         try {

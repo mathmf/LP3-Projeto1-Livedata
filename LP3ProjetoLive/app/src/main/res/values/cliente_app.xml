@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="cliente_CPF">CPF: %d</string>
+    <string name="produto_price">Preço: R$%d</string>
     <dimen name="product_item_min_height">100dp</dimen>
 
 

@@ -11,13 +11,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
 import com.example.mathe_000.lp3projetolive.db.Entidades.Produto;
 
 import java.util.ArrayList;
 
 public class ProdutoMain extends AppCompatActivity {
 
-    ListView listView;
+    Bundle newActivityInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,53 +27,50 @@ public class ProdutoMain extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
-        listView = (ListView) findViewById(R.id.ListaPro);
+        if (savedInstanceState == null) {
+            ProdutoListFragment fragment = new ProdutoListFragment();
 
-        //implementar com BD e LiveData
-        Produto p1 = new Produto("Carro",5142.00,"Um carro semi novo");
-        Produto p2 = new Produto("Casa",51420.00,"Uma casa nova");
-        Produto p3 = new Produto("Gato",51.42,"Um filhote de gato");
-
-
-        final ArrayList<Produto> ProdutoLista = new ArrayList<>();
-
-        ProdutoLista.add(p1);
-        ProdutoLista.add(p2);
-        ProdutoLista.add(p3);
-
-        ArrayList<String> values = new ArrayList<>();
-
-        for(int i = 0;i<ProdutoLista.size();i++){
-            values.add(ProdutoLista.get(i).getNome());
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container_pro, fragment, ClienteListFragment.TAG).commit();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, values);
 
-        listView.setAdapter(adapter);
+    }
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Intent activityIntent = new Intent(view.getContext(),ProdutoView.class);
-                Bundle newActivityInfo = new Bundle();
-                newActivityInfo.putSerializable("bundle",ProdutoLista.get(position));
-                activityIntent.putExtras(newActivityInfo);
-                startActivity(activityIntent);
-            }
-        });
+    public void show(Produto produto) {
+
+        ProdutoFragment produtoFragment = ProdutoFragment.forProduto(produto.getId());
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .addToBackStack("product")
+                .replace(R.id.fragment_container_pro,
+                        produtoFragment, null).commit();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(R.drawable.ic_edit);
+        newActivityInfo = new Bundle();
+        newActivityInfo.putSerializable("id",produto);
+    }
 
 
 
+    public void proBtn(View clickedBtn){
+        Intent activityIntent =
+                new Intent(this, ProdutoEdit.class);
+        if(newActivityInfo!=null){
+            activityIntent.putExtras(newActivityInfo);
+        }
+        startActivity(activityIntent);
+    }
+
+    @Override
+    public void onBackPressed (){
+        super.onBackPressed();
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setImageResource(R.drawable.ic_add_circle);
+        newActivityInfo = null;
     }
 
 }

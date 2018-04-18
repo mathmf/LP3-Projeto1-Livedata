@@ -9,26 +9,23 @@ import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
 import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
+import com.example.mathe_000.lp3projetolive.db.Entidades.Produto;
 
 import java.util.List;
 
-/**
- * Created by mathe_000 on 15/04/2018.
- */
 @Dao
-public interface ClienteDao {
+public interface ProdutoDao {
 
-    @Query("SELECT * FROM Clientes ORDER By Nome"  )
-    LiveData<List<Cliente>> getAllClientes();
+    @Query("SELECT * FROM Produtos ORDER By Nome"  )
+    LiveData<List<Produto>> getAllProdutos();
     // Select one task from Task table by id
-    @Query("SELECT * FROM Clientes WHERE id=:id")
-    LiveData<Cliente> getClienteById(int id);
+    @Query("SELECT * FROM Produtos WHERE id=:id")
+    LiveData<Produto> getProdutoById(int id);
 
-    @Insert (onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(List<Cliente> clientes);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertAll(List<Produto> produto);
 
     @Delete
-    void delete(Cliente client);
-
+    void delete(Produto produto);
 
 }

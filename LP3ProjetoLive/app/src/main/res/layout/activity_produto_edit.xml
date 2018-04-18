@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProdutoEdit">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:text="Nome:"
+                android:textSize="25sp"/>
+            <EditText
+                android:textSize="25sp"
+                android:id="@+id/NomePro"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:text="Preço:"
+                android:textSize="25sp"/>
+            <EditText
+                android:textSize="25sp"
+                android:id="@+id/PrecoPro"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:text="Desc:"
+                android:textSize="25sp"/>
+            <EditText
+                android:textSize="25sp"
+                android:id="@+id/DescPro"
+                android:layout_weight="1"/>
+        </TableRow>
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            >
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Confirma"
+                android:textSize="25sp"
+                android:onClick="btnProduto"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            >
+            <Button
+                android:id="@+id/delProBtn"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Deletar"
+                android:textSize="25sp"
+                android:onClick="delProBtn"
+                android:visibility="gone"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>

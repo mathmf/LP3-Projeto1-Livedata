@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.support.annotation.Nullable;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -45,12 +46,20 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
 
                 @Override
                 public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+                    if(oldItemPosition>=mClienteList.size()||newItemPosition>=clienteList.size()){
+                        return false;
+                    }
+                    Log.d("teste","old pos = " + oldItemPosition);
+                    Log.d("teste","new pos = " + newItemPosition);
                     return mClienteList.get(oldItemPosition).getId() ==
                             clienteList.get(newItemPosition).getId();
                 }
 
                 @Override
                 public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+                    if(oldItemPosition>=mClienteList.size()||newItemPosition>=clienteList.size()){
+                        return false;
+                    }
                     Cliente newCliente = clienteList.get(newItemPosition);
                     Cliente oldCliente = mClienteList.get(oldItemPosition);
                     return newCliente.getId() == oldCliente.getId()

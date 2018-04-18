@@ -4,6 +4,8 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MediatorLiveData;
+import android.content.Context;
+import android.os.AsyncTask;
 
 import com.example.mathe_000.lp3projetolive.db.ClienteDatabase;
 import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
@@ -13,6 +15,7 @@ import java.util.List;
 
 public class ClienteListViewModel extends AndroidViewModel {
     private final MediatorLiveData<List<Cliente>> mObservableClientes;
+    private final ClienteRepositorio mClienteRep;
 
     public ClienteListViewModel(Application application) {
         super(application);
@@ -21,8 +24,8 @@ public class ClienteListViewModel extends AndroidViewModel {
         // set by default null, until we get data from the database.
         mObservableClientes.setValue(null);
         AppExecutors mAppExecutors = new AppExecutors();
-        LiveData<List<Cliente>> clientes = ClienteRepositorio.getInstance(ClienteDatabase.getDatabaseInstance(application, mAppExecutors))
-                .getClientes();
+        mClienteRep = ClienteRepositorio.getInstance(ClienteDatabase.getDatabaseInstance(application, mAppExecutors));
+        LiveData<List<Cliente>> clientes = mClienteRep.getClientes();
 
         // observe the changes of the products from the database and forward them
         mObservableClientes.addSource(clientes, mObservableClientes::setValue);
@@ -33,6 +36,18 @@ public class ClienteListViewModel extends AndroidViewModel {
      */
     public LiveData<List<Cliente>> getClientes() {
         return mObservableClientes;
+    }
+
+    public void delCliente(Cliente id){
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                mClienteRep.delCliente(id);
+            }
+        });
+
+
+
     }
 
 }

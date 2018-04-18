@@ -82,6 +82,12 @@ public abstract class ClienteDatabase extends RoomDatabase {
         });
     }
 
+    private static void deleteData(final ClienteDatabase database,final Cliente cliente){
+        database.runInTransaction(() -> {
+            database.clienteDao().getClienteById(cliente.getId());
+        });
+    }
+
     private static void addDelay() {
         try {
             Thread.sleep(4000);

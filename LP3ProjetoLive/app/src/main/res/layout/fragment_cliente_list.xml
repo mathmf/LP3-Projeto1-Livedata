@@ -21,7 +21,7 @@
             android:contentDescription="Lista de clientes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="LinearLayoutManager"
+            app:layoutManager="com.example.mathe_000.lp3projetolive.NpaLinearLayoutManager"
             />
 
     </LinearLayout>

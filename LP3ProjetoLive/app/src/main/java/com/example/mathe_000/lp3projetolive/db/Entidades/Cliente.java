@@ -11,13 +11,18 @@ import java.io.Serializable;
 @Entity(tableName = "Clientes")
 public class Cliente implements Serializable {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String Nome;
     private int CPF;
 
     public Cliente(){
 
+    }
+
+    public Cliente(String nome, int CPF) {
+        Nome = nome;
+        this.CPF = CPF;
     }
 
     public Cliente(String nome, int CPF, int id) {

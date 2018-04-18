@@ -47,5 +47,9 @@ public class ClienteRepositorio {
         return mDatabase.clienteDao().getClienteById(clienteId);
     }
 
+    public void delCliente(Cliente id){
+        mDatabase.clienteDao().delete(id);
+    }
+
 
 }

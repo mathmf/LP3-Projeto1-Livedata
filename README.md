@@ -62,3 +62,17 @@ Tudo para Pagamentos.
 
 Total feito até agora 50%
 
+17/05
+
+Cliente completado.
+
+Falta:
+
+MVVM + LiveData e databinding para Produto.\
+Tudo para Pagamentos.
+
+Bugs:
+
+Depois de deletar ou editar um cliente, se clicar no botão de editar leva a tela de edição com os valores iniciais.
+
+total feito até agora 60%

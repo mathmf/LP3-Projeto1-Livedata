@@ -66,7 +66,7 @@ public class ClienteFragment extends Fragment {
 
     }
 
-    /** Creates product fragment for specific product ID */
+    /** Creates Cliente fragment for specific product ID */
     public static ClienteFragment forClient(int clienteId) {
         ClienteFragment fragment = new ClienteFragment();
         Bundle args = new Bundle();

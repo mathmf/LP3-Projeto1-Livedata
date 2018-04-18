@@ -3,21 +3,22 @@ package com.example.mathe_000.lp3projetolive;
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
 
-import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
-import com.example.mathe_000.lp3projetolive.databinding.FragmentClienteListBinding;
 
+import com.example.mathe_000.lp3projetolive.databinding.FragmentClienteListBinding;
+import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
 
 import java.util.List;
 
@@ -30,6 +31,7 @@ public class ClienteListFragment extends Fragment {
 
     private FragmentClienteListBinding mBinding;
 
+    private ClienteListViewModel viewModel;
 
     @Nullable
     @Override
@@ -40,6 +42,10 @@ public class ClienteListFragment extends Fragment {
         mClienteAdapter = new ClienteAdapter(mClienteClickCallback);
         mBinding.clientesList.setAdapter(mClienteAdapter);
 
+
+
+
+
         return mBinding.getRoot();
     }
 
@@ -47,7 +53,7 @@ public class ClienteListFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        final ClienteListViewModel viewModel = ViewModelProviders.of(this).get(ClienteListViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(ClienteListViewModel.class);
 
         subscribeUi(viewModel);
     }
@@ -73,6 +79,7 @@ public class ClienteListFragment extends Fragment {
     private final ClienteClickCallback mClienteClickCallback = new ClienteClickCallback() {
         @Override
         public void onClick(Cliente cliente) {
+
 
             if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
                 ((ClienteMain) getActivity()).show(cliente);

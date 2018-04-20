@@ -12,8 +12,10 @@ import android.support.annotation.NonNull;
 
 import com.example.mathe_000.lp3projetolive.AppExecutors;
 import com.example.mathe_000.lp3projetolive.db.Dao.ClienteDao;
+import com.example.mathe_000.lp3projetolive.db.Dao.PagamentosDao;
 import com.example.mathe_000.lp3projetolive.db.Dao.ProdutoDao;
 import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
+import com.example.mathe_000.lp3projetolive.db.Entidades.Pagamentos;
 import com.example.mathe_000.lp3projetolive.db.Entidades.Produto;
 
 import java.util.List;
@@ -22,7 +24,7 @@ import java.util.List;
 /**
  * Created by mathe_000 on 15/04/2018.
  */
-@Database(entities = {Cliente.class, Produto.class}, version = 1, exportSchema = false)
+@Database(entities = {Cliente.class, Produto.class, Pagamentos.class}, version = 1, exportSchema = false)
 public abstract class ClienteDatabase extends RoomDatabase {
 
 
@@ -31,6 +33,8 @@ public abstract class ClienteDatabase extends RoomDatabase {
     public abstract ClienteDao clienteDao();
 
     public abstract ProdutoDao produtoDao();
+
+    public abstract PagamentosDao pagamentosDao();
 
     public static final String DATABASE_NAME = "Clientes";
 

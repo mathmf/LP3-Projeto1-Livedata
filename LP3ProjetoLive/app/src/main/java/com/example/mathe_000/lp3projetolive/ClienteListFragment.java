@@ -59,7 +59,7 @@ public class ClienteListFragment extends Fragment {
     }
 
     public void subscribeUi(ClienteListViewModel viewModel) {
-        // Update the list when the data changes
+
         viewModel.getClientes().observe(this, new Observer<List<Cliente>>() {
             @Override
             public void onChanged(@Nullable List<Cliente> myClientes) {
@@ -69,8 +69,7 @@ public class ClienteListFragment extends Fragment {
                 } else {
                     mBinding.setIsLoading(true);
                 }
-                // espresso does not know how to wait for data binding's loop so we execute changes
-                // sync.
+
                 mBinding.executePendingBindings();
             }
         });

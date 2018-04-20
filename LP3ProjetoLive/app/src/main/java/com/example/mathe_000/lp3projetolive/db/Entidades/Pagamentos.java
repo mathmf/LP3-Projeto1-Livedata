@@ -1,45 +1,72 @@
 package com.example.mathe_000.lp3projetolive.db.Entidades;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
+import android.arch.persistence.room.PrimaryKey;
+
 /**
  * Created by mathe_000 on 14/04/2018.
  */
 
+@Entity(tableName = "Pagamentos",
+        foreignKeys = {
+                @ForeignKey(entity = Cliente.class,
+                        parentColumns = "id",
+                        childColumns = "clienteId",
+                        onDelete = ForeignKey.CASCADE),
+                @ForeignKey(entity = Produto.class,
+                        parentColumns = "id",
+                        childColumns = "produtoId",
+                        onDelete = ForeignKey.CASCADE)},
+        indices = {@Index(value = "clienteId")
+        })
 public class Pagamentos {
 
-    private Cliente cliente;
-    private Produto produto;
-    private int parcelas;
-
-    public Pagamentos(Cliente cliente, Produto produto, int parcelas) {
-        this.cliente = cliente;
-        this.produto = produto;
-        this.parcelas = parcelas;
-    }
+    @PrimaryKey(autoGenerate = true)
+    private int Id;
+    private int clienteId;
+    private int produtoId;
+    private String Local;
 
     public Pagamentos() {
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Pagamentos(int clienteId, int produtoId, String local) {
+        this.clienteId = clienteId;
+        this.produtoId = produtoId;
+        Local = local;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public int getId() {
+        return Id;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public void setId(int id) {
+        Id = id;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public int getClienteId() {
+        return clienteId;
     }
 
-    public int getParcelas() {
-        return parcelas;
+    public void setClienteId(int clienteId) {
+        this.clienteId = clienteId;
     }
 
-    public void setParcelas(int parcelas) {
-        this.parcelas = parcelas;
+    public int getProdutoId() {
+        return produtoId;
+    }
+
+    public void setProdutoId(int produtoId) {
+        this.produtoId = produtoId;
+    }
+
+    public String getLocal() {
+        return Local;
+    }
+
+    public void setLocal(String local) {
+        Local = local;
     }
 }

@@ -13,8 +13,11 @@ import java.util.List;
 
 public interface PagamentosDao {
 
-    @Query("SELECT * FROM Pagamentos where clienteId = :clienteId"  )
-    LiveData<List<Pagamentos>> getAllPagamentos(int clienteId);
+    @Query("SELECT * FROM Pagamentos ORDER By Cliente"  )
+    LiveData<List<Pagamentos>> getAllPagamentos();
+
+    @Query("SELECT * FROM Pagamentos WHERE id=:id")
+    LiveData<Pagamentos> getPagamentobyId(int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Pagamentos> pagamentos);

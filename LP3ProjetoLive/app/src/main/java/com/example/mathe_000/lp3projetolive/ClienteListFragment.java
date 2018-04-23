@@ -60,6 +60,7 @@ public class ClienteListFragment extends Fragment {
 
     public void subscribeUi(ClienteListViewModel viewModel) {
 
+
         viewModel.getClientes().observe(this, new Observer<List<Cliente>>() {
             @Override
             public void onChanged(@Nullable List<Cliente> myClientes) {

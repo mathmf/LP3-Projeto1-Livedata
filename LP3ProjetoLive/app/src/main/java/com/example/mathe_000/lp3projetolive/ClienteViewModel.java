@@ -8,7 +8,7 @@ import android.arch.lifecycle.ViewModelProvider;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 
-import com.example.mathe_000.lp3projetolive.db.Dao.ClienteDao;
+
 import com.example.mathe_000.lp3projetolive.db.ClienteDatabase;
 import com.example.mathe_000.lp3projetolive.db.Entidades.Cliente;
 

@@ -36,7 +36,7 @@ ViewModel e databinding.
 
 Total feito até agora:20%
 
-15/05
+15/04
 
 Criado BD e ViewModel com LiveData para Cliente, ainda não testado no programa principal.
 
@@ -50,7 +50,7 @@ ViewModel e databinding.
 
 Total feito até agora:25%
 
-16/05
+16/04
 
 Implementação completa MVVM com databinding e LiveData para Cliente, falta apenas implementar a CRUD do Cliente.
 
@@ -62,7 +62,7 @@ Tudo para Pagamentos.
 
 Total feito até agora 50%
 
-17/05
+17/04
 
 Cliente completado.
 
@@ -77,7 +77,7 @@ Depois de deletar ou editar um cliente, se clicar no botão de editar leva a tel
 
 total feito até agora 60%
 
-18/05
+18/04
 
 Produto completado.
 
@@ -92,3 +92,13 @@ Bugs:
 Depois de deletar ou editar um cliente ou produto, se clicar no botão de editar leva a tela de edição com os valores iniciais.
 
 total feito até agora 75%
+
+22/04
+
+Pagamentos quase completado.
+
+Falta:
+
+Pagamento edit com Gps.
+
+total feito até agora 90%

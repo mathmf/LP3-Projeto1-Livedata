@@ -5,6 +5,8 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.io.Serializable;
+
 /**
  * Created by mathe_000 on 14/04/2018.
  */
@@ -21,20 +23,24 @@ import android.arch.persistence.room.PrimaryKey;
                         onDelete = ForeignKey.CASCADE)},
         indices = {@Index(value = "clienteId")
         })
-public class Pagamentos {
+public class Pagamentos implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int Id;
     private int clienteId;
     private int produtoId;
+    private String cliente;
+    private String produto;
     private String Local;
 
     public Pagamentos() {
     }
 
-    public Pagamentos(int clienteId, int produtoId, String local) {
+    public Pagamentos(int clienteId, int produtoId, String cliente, String produto, String local) {
         this.clienteId = clienteId;
         this.produtoId = produtoId;
+        this.cliente = cliente;
+        this.produto = produto;
         Local = local;
     }
 
@@ -68,5 +74,21 @@ public class Pagamentos {
 
     public void setLocal(String local) {
         Local = local;
+    }
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public String getProduto() {
+        return produto;
+    }
+
+    public void setProduto(String produto) {
+        this.produto = produto;
     }
 }

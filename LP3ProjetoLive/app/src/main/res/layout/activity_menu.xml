@@ -44,7 +44,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/pagamentos"
-                android:textSize="25dp"/>
+                android:textSize="25dp"
+                android:id="@+id/ButtonPag"
+                android:onClick="menuBtn"/>
 
         </TableRow>
 

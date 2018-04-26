@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="@dimen/product_item_min_height"
-        android:onClick="@{() ->  callback.onClick(produto)}"
+        android:onClick="@{() ->  callback.onClick(pagamento)}"
         android:orientation="horizontal"
-        android:layout_marginStart="@dimen/item_horizontal_margin"
-        android:layout_marginEnd="20dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        android:layout_marginLeft="@dimen/item_horizontal_margin"
+        android:layout_marginRight="20dp">
 
         <RelativeLayout
             android:layout_marginStart="@dimen/item_horizontal_margin"
@@ -79,7 +79,8 @@
             android:layout_marginEnd="@dimen/item_horizontal_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+
+            android:layout_marginTop="100dp"
             >
 
 

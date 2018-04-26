@@ -48,7 +48,7 @@ public class PagamentoMain extends AppCompatActivity {
 
     public void pagBtn(View clickedBtn){
         Intent activityIntent =
-                new Intent(this, ClienteEdit.class);
+                new Intent(this, PagamentoEdit.class);
         if(newActivityInfo!=null){
             activityIntent.putExtras(newActivityInfo);
         }

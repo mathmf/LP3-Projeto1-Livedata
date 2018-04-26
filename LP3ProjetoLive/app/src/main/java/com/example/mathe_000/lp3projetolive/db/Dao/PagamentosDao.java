@@ -1,6 +1,7 @@
 package com.example.mathe_000.lp3projetolive.db.Dao;
 
 import android.arch.lifecycle.LiveData;
+import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -11,6 +12,7 @@ import com.example.mathe_000.lp3projetolive.db.Entidades.Pagamentos;
 
 import java.util.List;
 
+@Dao
 public interface PagamentosDao {
 
     @Query("SELECT * FROM Pagamentos ORDER By Cliente"  )

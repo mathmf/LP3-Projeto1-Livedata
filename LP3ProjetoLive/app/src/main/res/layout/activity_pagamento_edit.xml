@@ -6,4 +6,84 @@
     android:layout_height="match_parent"
     tools:context=".PagamentoEdit">
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:text="Cliente:"
+                android:textSize="25sp"/>
+            <Spinner
+                android:textSize="25sp"
+                android:id="@+id/CliSpi"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:text="Produto:"
+                android:textSize="25sp"/>
+            <Spinner
+                android:textSize="25sp"
+                android:id="@+id/ProSpi"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <Button
+                android:text="Local:"
+                android:textSize="25sp"
+                android:onClick="gpsBtn"/>
+            <TextView
+                android:textSize="25sp"
+                android:text="Local"
+                android:id="@+id/LocalText"
+                android:layout_weight="1"
+                />
+        </TableRow>
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            >
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Confirma"
+                android:textSize="25sp"
+                android:onClick="btnPagamento"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            >
+            <Button
+                android:id="@+id/delPagBtn"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Deletar"
+                android:textSize="25sp"
+                android:onClick="delPagBtn"
+                android:visibility="gone"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+    </TableLayout>
+
 </android.support.constraint.ConstraintLayout>

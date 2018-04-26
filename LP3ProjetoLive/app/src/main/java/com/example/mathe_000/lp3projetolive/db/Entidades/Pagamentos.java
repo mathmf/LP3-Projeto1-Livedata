@@ -21,7 +21,7 @@ import java.io.Serializable;
                         parentColumns = "id",
                         childColumns = "produtoId",
                         onDelete = ForeignKey.CASCADE)},
-        indices = {@Index(value = "clienteId")
+        indices = {@Index(value = "clienteId"),
         })
 public class Pagamentos implements Serializable {
 
